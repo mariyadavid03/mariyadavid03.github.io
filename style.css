@@ -247,12 +247,12 @@ span{
 .timeline-item:last-child{
     margin-bottom: 0;
 }
-.timeline-item:nth-child(even){
+.timeline-item:nth-child(odd){
     padding-right: calc(49% + 33px);
     text-align: right;
     padding-left: 24px;
 }
-.timeline-item:nth-child(odd){
+.timeline-item:nth-child(even){
     padding-right: 24px;
     padding-left: calc(49% + 33px);
 }
@@ -321,7 +321,7 @@ span{
 }
 .projects-container-1{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 2.5rem;
 }
