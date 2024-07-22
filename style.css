@@ -10,10 +10,10 @@
 }
 
 :root{
-    --bg-color : #e2e2e2;
+    --bg-color : #0e0b36;
     --second-bg-color :rgb(16, 12, 50);
-    --text-color : #1c1b1b;
-    --main-color : #5f1a7f;
+    --text-color : #ffffff;
+    --main-color : #4adeff;
 }
 html{
     font-size: 60%;
@@ -43,7 +43,7 @@ body{
 
 .logo{
     font-size: 3rem;
-    color:#000000;
+    color:#ffffff;
     font-weight:750;
     transition: 0.3s ease;
     text-shadow:  0 0 24px var(--bg-color);
@@ -52,6 +52,7 @@ body{
 
 .logo span{
     text-shadow:  0 0 24px var(--main-color);
+    color: #ffffff;
 }
 
 .navbar a{
@@ -64,7 +65,7 @@ body{
 }
 .navbar a:hover,
 .navbar a:active{
-    color: var(--main-color) ;
+    color: white ;
     border-bottom: 3px solid var(--main-color);
 
 }
@@ -76,7 +77,7 @@ body{
 
 /*Home*/
 section{
-    min-height: 100vh;
+    min-height: 85vh;
     padding: 3rem 10% 11rem;
 }
 .home{
@@ -208,7 +209,7 @@ span{
 /*Education*/
 
 .heading{
-    font-size: 7.5rem;
+    font-size: 6rem;
     text-align: center;
     margin: 5rem 0;
 }
@@ -327,7 +328,7 @@ span{
 }
 
 .project-box{
-    background-color: var(--main-color);
+    background-color: rgb(50, 64, 133);
     justify-content: left;
     height: 350px;
     border-radius: 3rem;
@@ -409,8 +410,8 @@ span{
     background-color: var(--bg-color);
 }
 .skills .container{
-    background: var(--main-color);
-    color: #fff;
+    background: black;
+    color: var(--main-color);
     border-radius: 1rem;
     padding: 2rem 1.4rem 2rem 1.4rem;
     width: 80%;
@@ -446,7 +447,7 @@ span{
 }
 
 .skills .container .bar .info:hover{
-    box-shadow: 0 0 10px var(--text-color);
+    box-shadow: 0 0 20px rgb(35, 99, 123);
     cursor: pointer;
     transform: scale(1.05);
 }
@@ -457,14 +458,23 @@ span{
   }
 
 .skills .container .row1{
-    padding: 0px 30px 18px 30px;
+    padding: 0px 30px 18px 70px;
     width: 50%;
-    border-left: solid 2px white;
+    border-left: solid 2px rgb(15, 16, 60);
 }
 .skills .container .row1 .info{
     font-size: 1.5rem;
+    
+}
+.skills .container .row1 .info p{
+    padding-bottom: 4px;
+    
 }
 .skills .container .info svg{
+    width: 50px;
+    height: 50px;
+}
+.skills .container .info img{
     width: 50px;
     height: 50px;
 }
@@ -489,65 +499,56 @@ span{
     font-size: 14px;
     transition: 0.3s ease-in-out
   }
-/*Contatc*/
-.contact{
+/* Contact */
+.contact {
     background-color: var(--bg-color);
     padding-bottom: 24px;
 }
-.contact h2{
+.contact h2 {
     margin-bottom: 3rem;
     color: #fff;
 }
-.contact-conatiner{
-    margin: auto;
+.contact-container {
+    display: flex;
+    justify-content: center;
     text-align: center;
+    margin: auto;
 }
-.contact-icon{
+.contact-container .social {
+    display: block;
+    gap: 2rem;
+    padding-bottom: 25px;
+    color: var(--main-color);
+}
+.contact-container .social a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 25px;
+    color: var(--main-color);
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.contact-container .social a:hover {
+    transform: scale(1.2) translateY(-10px);
+    color: white;
+}
+.contact-icon {
     font-size: 3.5rem;
     padding-bottom: 0.3rem;
     color: var(--main-color);
 }
-.contact-info{
-    font-size: 1.9rem;
-}
-.item{
-    margin: auto;
-    padding: 2.3rem ;
-    border-radius: 50px;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
-    
-}
-.item:hover{
-    transform: scale(1.20);
-    
-
-}
-.contact-conatiner .social{
-    text-align: center;
-    padding-bottom: 25px;
+.contact-icon :hover {
+    font-size: 3.5rem;
+    padding-bottom: 0.3rem;
     color: var(--main-color);
 }
-.contact-conatiner .social a{
-    font-size: 25px;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    margin: 0 10px;
-    transition:  0.3s ease-in-out;
+.contact-info p{
+    font-size: 17px;
+    color: rgb(255, 255, 255);
 }
-.contact-conatiner .social a:hover{
-    transform: scale(1.2)translateY(-10px);
-    box-shadow: 0 0 25px var(--main-color);
-    background-color: var(--main-color);
-    color: white;
-}
-/*Scrol Bra*/
+/*Scrol Bar*/
 ::-webkit-scrollbar{
     width: 14px;
 }
@@ -728,6 +729,10 @@ span{
         width: 40px;
         height: 40px;
    }
+   .skills .container .info img{
+        width: 40px;
+        height: 40px;
+    }
    .projects-container-1 .project-box {
     width: 250px;
    }
@@ -737,6 +742,10 @@ span{
         width: 30px;
         height: 30px;
    }
+   .skills .container .info img{
+    width: 30px;
+    height: 30px;
+}
    .projects-container-1 {
     display: block;
     
@@ -760,6 +769,10 @@ span{
         width: 20px;
         height: 20px;
    }
+   .skills .container .info img{
+    width: 20px;
+    height: 20px;
+}
    .skills .container .row{
     grid-template-columns: repeat(3, 1fr);
    }
