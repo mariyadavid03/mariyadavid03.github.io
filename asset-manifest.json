@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9029fd13.css",
+    "main.js": "/static/js/main.bae33075.js",
+    "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
+    "static/media/bg2.jpg": "/static/media/bg2.9792a5985cf317faed9f.jpg",
+    "static/media/parent-control.png": "/static/media/parent-control.d51f5a49c611b50d0da4.png",
+    "static/media/Component 3 (1).png": "/static/media/Component 3 (1).ddbcc7f1adeedc4a9abf.png",
+    "static/media/rest.png": "/static/media/rest.18e2333e1b73b1220bf4.png",
+    "static/media/health.png": "/static/media/health.1f9d176a83fa42b4609a.png",
+    "static/media/bulb.png": "/static/media/bulb.72bdcfb006fd773261e8.png",
+    "static/media/pet.png": "/static/media/pet.33b7277cb4d8abc14c3b.png",
+    "static/media/Component 2 (1).png": "/static/media/Component 2 (1).3f2589625dca8e19f713.png",
+    "static/media/pin.png": "/static/media/pin.1950cb212bb98d0a6510.png",
+    "static/media/tear.png": "/static/media/tear.2fa9d975ad35328c66c7.png",
+    "static/media/TRAIN.png": "/static/media/TRAIN.4ded670d26ffe49eac96.png",
+    "static/media/arrow-down.png": "/static/media/arrow-down.3e4eddb487bc4603269c.png",
+    "index.html": "/index.html",
+    "main.9029fd13.css.map": "/static/css/main.9029fd13.css.map",
+    "main.bae33075.js.map": "/static/js/main.bae33075.js.map",
+    "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9029fd13.css",
+    "static/js/main.bae33075.js"
+  ]
+}
