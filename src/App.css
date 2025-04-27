@@ -1,38 +1,829 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Geologica:wght@100..900&family=Limelight&family=Linden+Hill:ital@0;1&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Moul&family=Mrs+Saint+Delafield&family=Mynerve&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Afacad", sans-serif;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+    overflow-x: hidden;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Navigation Bar Styles */
+.navBar {
+  width: 100%;
+  background-color: #ffffff;
+  color: #181818;
+  box-shadow:  0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 21px;
+  width: auto;
+}
+
+.navItems {
+  display: flex;
+  gap: 2rem;
+}
+
+.navItems a {
+  color: rgb(43, 43, 43);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Mynerve", cursive;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navItems a:hover {
+  color: #000000;
+}
+
+
+#backToTop {
+  display: none; 
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffc400;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+
+#backToTop:hover {
+  background-color: #ffc400;
+}
+.navItems a.active {
+  color: #020202;
+}
+
+.navItems a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #171717;
+}
+
+
+main {
+  flex: 1;
+  /* padding: 0rem 3rem;
+  max-width: 1200px; */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.section h1, .section h2 {
+  margin-bottom: 1rem;
+}
+
+.section h1{
+  font-size: 3.5rem;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Mali", cursive;
+}
+
+.section p {
+  line-height: 1.6;
+}
+
+.homeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 52px;
+  /* margin-top: -120px; */
+  background-color: white;
+}
+
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  padding: 0rem 6rem 0rem 6rem;
+  /* background-color: rgb(255, 255, 255); */
+  color: rgb(45, 45, 45);
+}
+
+.aboutContainer div{
+  width: 100%;
+}
+
+.bottom-tear {
+  transform: rotate(180deg);
+  padding-top: 8%;
+}
+.aboutContainer p {
+  font-size: 19px;
+
+}
+
+.aboutContainer p span {
+  font-weight: 500;
+
+}
+.aboutContainer .aboutImge {
+  width: 72%;
+  margin-left: 76px;
+}
+.experienceSection { 
+  background-color: #fff; 
+  padding: 5rem 2rem; 
+  color: #111; 
+  margin-top: -106px;
+}
+
+.aboutHeading{
+  text-align: center;
+  margin-bottom: 1.5rem;
+  width: 41%;
+}
+.experienceContainer { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 2.5rem; 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding-top: 2rem; 
+}
+
+
+
+@keyframes cutoutFloatTopOnly {
+  0% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  25% {
+    transform: rotate(2deg) translateX(8px);
+  }
+  50% {
+    transform: rotate(-2deg) translateX(-8px);
+  }
+  75% {
+    transform: rotate(1deg) translateX(4px);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0px);
+  }
+}
+
+.experienceContainer img {
+  height: 239px;
+  width: auto;
+  
+  animation: cutoutFloatTopOnly 4s ease-in-out infinite;
+  transform-origin: top center; 
+}
+
+.experienceDetails { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+.expDate { 
+  font-size: 1.1rem;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+.company { font-weight: 500; font-size: 1.1rem; margin-bottom: 0.2rem; }
+
+.designation { font-size: 1.5rem; font-weight: bold;  margin-bottom: 0.8rem; }
+
+.expDesc { font-size: 1.2rem; line-height: 1.6; color: #333; max-width: 600px; }
+
+@media (max-width: 768px) { .experienceContainer { flex-direction: column; align-items: center; text-align: center; }
+
+.workImage { width: 90%; }
+
+.experienceDetails { align-items: center; } }
+
+.homeText {
+  flex: 1;
+  max-width: 600px;
+  margin-left: 9rem;
+}
+
+.homeImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.homeImage img {
+  max-width: 72%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.homeTextSmall {
+  font-size: 1.9rem;
+  text-align: center;
+  color: #171717;
+  margin-bottom: 0.5rem;
+  font-family: "Mynerve", cursive;
+}
+
+.homeTextBig {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  font-family: "Mali", cursive;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.homeDescription {
+  font-size: 1.1rem;
+  color: #555;
+  font-family: "Afacad", sans-serif;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.roundBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.roundBoxes li {
+  background-color: #ffffff;
+  color: #333;
+  padding: 0.6rem 1rem;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid black;
+  transition: 0.2s ease-in;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; 
+}
+.roundBoxes li:hover{
+  background-color: #020202;
+  color: #e1e1e1;
+  cursor: default;
+}
+
+
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 123, 255, 0.1); 
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+}
+
+.circle-left {
+  width: 300px;
+  height: 300px;
+  top: 100px;
+  left: -150px;
+}
+
+.circle-right {
+  width: 200px;
+  height: 200px;
+  bottom: 100px;
+  right: -100px;
+}
+.educationSection {
+  background-color: #ffffff;
+  color: #1e1e1e;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.eduHeading {
+  font-size: 3rem;
+  font-family: "Mali", cursive;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.eduTimeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.eduTimeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -47px;
+  width: 3px;
+  height: 89%;
+  background-color: #f4c608;
+}
+.eduTimelineItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.eduYear {
+  font-size: 4rem;
+  /* font-weight: bold; */
+  margin-right: 8rem;
+  min-width: 100px;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  text-align: right;
+}
+
+.eduDetails {
+  background: rgba(243, 243, 243, 0.863);
+  padding: 1rem 1.5rem;
+  width: 122vh;
+  border-radius: 10px;
+  text-align: left;
+  flex: 1 1;
+}
+
+.eduDuration {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+.eduInstitution {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .eduTimeline {
+    align-items: center;
+  }
+
+  .eduTimeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .eduTimelineItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .eduYear {
+    margin: 0 0 1rem 0;
+    text-align: center;
+  }
+
+  .eduDetails {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.skills-section {
+  padding: 5rem 2rem;
+  /* background-color: white; */
+  text-align: center;
+}
+
+.skills-heading {
+  font-size: 3rem;
+  font-family: "Mali", cursive;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.skills-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+
+.skills-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.skill-category {
+  flex: 1 1 45%;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 12px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 6rem;
+}
+
+.skill-icon {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+
+
+
+.skill-center-icon {
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  color: #333;
+}
+.skill-name {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .skill-category {
+    width: 100%;
+  }
+}
+
+.projects-section {
+  padding: 2.5rem 1.5rem;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.pin-image {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  width: 125px;
+  height: auto;
+  margin: 10px;
+  z-index: 10;
+}
+
+.projects-heading {
+  font-size: 3rem;
+  font-family: "Mali", cursive;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.projects-section button{
+  border: none;
+    background-color: #f5deb300;
+}
+
+.contact-links img{
+  width: auto;
+  height: 28px;
+}
+.arrow-icon:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.project-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  backface-visibility: hidden;
+  overflow: hidden;
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+}
+
+.project-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.project-description {
+  font-size: 1rem;
+    color: #414141;
+    text-align: center;
+}
+
+.tech-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.project-role {
+  font-size: 1rem;
+  color: #333;
+}
+
+.arrow-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  align-self: self-end;
+}
+
+.arrow-icon {
+  width: 30px;
+  height: auto;
+  animation: bounce 1.5s infinite;
+}
+
+.contact-section {
+  padding: 3rem 1.5rem;
+  background-color: #ffffff;
+  text-align: center;
+  /* border-top: 2px solid #e0e0e0; */
+}
+
+.contact-heading {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-family: "Mali", cursive;
+}
+
+.contact-description {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 30px;
   color: white;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-link i {
+  font-size: 1.25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contact-link:hover {
+  transform: translateY(-4px);
+}
+
+.contact-link.email {
+  background-color: #ea4335; 
+}
+
+.contact-link.email:hover {
+  background-color: #d1352e;
+}
+
+.contact-link.github {
+  background-color: #333; 
+}
+
+.contact-link.github:hover {
+  background-color: #24292f;
+}
+
+.contact-link.linkedin {
+  background-color: #0077b5; 
+}
+
+.contact-link.linkedin:hover {
+  background-color: #005f85;
+}
+
+.contact-link.instagram {
+  background-color: #e4405f; 
+}
+
+
+.contact-link.instagram:hover {
+  background-color: #b92d3a;
+}
+@media (max-width: 768px) {
+  .skills-row {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .skill-category {
+    width: 100%;
+    align-items: center;
   }
 }
+
+/* Responsive Design for Home Section */
+@media (max-width: 992px) {
+  .homeContainer {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .roundBoxes {
+    justify-content: center;
+  }
+  
+  .homeTextBig {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .homeTextBig {
+    font-size: 2rem;
+  }
+  
+  .homeDescription {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navContainer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .navItems {
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+}
+
