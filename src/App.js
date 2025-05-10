@@ -204,8 +204,9 @@ function App() {
             Exploring ideas, building solutions, and learning every day.</p>
             <ul className='roundBoxes'>
               <li>Undergraduate</li>
+              <li>QA Enthusiast</li>
               <li>Software Engineering</li>
-              <li>Web Developer</li>
+              
             </ul>
           </div>
           <div className='homeImage'>
@@ -228,14 +229,11 @@ function App() {
             <br/>
             <p>Hi there!</p>
             <p>
-            I’m a final year Software Engineering undergraduate at ICBT Campus, Colombo. 
-            Currently, I’m gaining hands-on industry experience as a  
-            <span> Search Operations Intern at PickMe. </span></p><p>
-            I’m passionate about tech and problem-solving, 
-            but outside of work and code, I’m someone who loves 
-            to explore new places. I enjoy <span>traveling, sightseeing, </span>
-            and getting lost in a good playlist — <span>music and coffee</span> is my everyday 
-            fuel. </p>
+              I’m passionate about tech and problem-solving, and I’m especially interested in building a career in 
+              <span>Quality Assurance and Analytics.</span> Outside of work and code, I love exploring new places. 
+              I enjoy <span>traveling, sightseeing,</span> and getting lost in a good playlist — 
+              <span>music and coffee</span> is my everyday fuel.
+            </p>
             {/* <p>#Coffee☕ #Travel🏞️ #Coding👩‍💻 #Music🎶</p> */}
 
             <div
